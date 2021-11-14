@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosy Florist</title>
+    <style>
+      body {
+        background: linear-gradient(
+          179.4deg,
+          rgb(253, 240, 233) 2.2%,
+          rgb(255, 194, 203) 96.2%
+        );
+        margin: 30px 40px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 42px;
+        color: #f06161;
+        font-family: "Lucida Calligraphy", cursive;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 26px;
+        font-weight: 400;
+        font-family: "Lucida Bright", serif;
+        color: #45171d;
+      }
+
+      h3 {
+        font-size: 22px;
+        font-family: "Lucida Handwriting", cursive;
+        text-align: center;
+        color: #c51350;
+      }
+
+      p {
+        text-align: center;
+        width: 360px;
+        font-size: 18px;
+        font-family: "Palatino Linotype", serif;
+        line-height: 25px;
+      }
+
+      ul {
+        padding: 0;
+        margin: 10px;
+        text-align: center;
+      }
+
+      li {
+        display: inline-table;
+        list-style: none;
+        margin: 10px;
+      }
+
+      img {
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+
+      a:hover {
+        cursor: help;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        font-size: 18px;
+        font-family: "Lucida Sans", sans-serif;
+        color: white;
+        border: 1px solid #005792;
+        border-radius: 30px;
+        padding: 15px 17px;
+        background-color: #005792;
+        transition: all 200ms ease-in-out;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        cursor: pointer;
+        color: black;
+        background-color: #d1f4fa;
+      }
+
+      .Rcol {
+        color: red;
+        font-weight: bold;
+      }
+
+      .Ycol {
+        color: #fffc3a;
+        font-weight: bold;
+      }
+
+      .Pcol {
+        color: #ff6bd6;
+        font-weight: bold;
+      }
+
+      .link {
+        text-decoration: none;
+        color: #f6378f;
+        font-weight: bold;
+        font-family: "Fira Mono", monospace;
+        font-size: 17px;
+      }
+
+      .footer {
+        color: #5f6769;
+        text-align: center;
+        margin: 20px;
+        font-size: 16px;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Father's Day Special</h1>
+    <h2>❤ The perfect gift to show your love and appreciation ❤</h2>
+
+    <ul>
+      <hr />
+      <li>
+        <h3 class="roseFlower">Rose</h3>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/173/original/rose.jpg?1622931162"
+          alt="roses"
+        />
+        <p>
+          The <span class="Rcol">red</span> rose is the official flower for
+          Father's Day. The rose's symbolism changes by the color and how many
+          roses are given.
+        </p>
+        <div>
+          <a
+            href="https://www.ftd.com/blog/share/rose-meaning-and-symbolism#:~:text=Red%20roses%20symbolize%20love%20and,roses%20symbolize%20innocence%20and%20purity."
+            target="_blank"
+            class="link"
+            >Learn more</a
+          >
+        </div>
+      </li>
+      <li>
+        <h3 class="sunFlower">Sunflower</h3>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/186/original/sunflower.jpg?1622953253"
+          alt="sunflowers"
+        />
+        <p>
+          The sunflower commonly means adoration and loyalty. The
+          <span class="Ycol">yellow</span> color also symbolizes vitality,
+          intelligence, and happiness.
+        </p>
+        <div>
+          <a
+            href="https://www.ftd.com/blog/share/sunflower-meaning-and-symbolism"
+            target="_blank"
+            class="link"
+            >Learn more</a
+          >
+        </div>
+      </li>
+      <li>
+        <h3 class="tulipFlower">Tulip</h3>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/010/178/original/tulip.jpg?1622932379"
+          alt="tulips"
+        />
+        <p>
+          The common meaning for
+          <span class="Rcol">red</span> tulips is perfect or deep love, while
+          <span class="Pcol">pink</span>
+          tulips symbolize happiness and confidence.
+        </p>
+        <div>
+          <a
+            href="https://www.ftd.com/blog/share/tulips-meaning-and-symbolism"
+            target="_blank"
+            class="link"
+            >Learn more</a
+          >
+        </div>
+      </li>
+    </ul>
+    <br />
+    <button>💐 Buy a bouquet</button>
+    <div class="footer">Coded by Chara Siaw</div>
+    <script>
+      function buyFlowers() {
+        let name = prompt("What is your first name?");
+        let email = prompt("What is your email address?");
+        let type = prompt("Which flower bouquet would you like to buy?");
+
+        let h1 = document.querySelector("h1");
+        let h3R = document.querySelector(".roseFlower");
+        let h3S = document.querySelector(".sunFlower");
+        let h3T = document.querySelector(".tulipFlower");
+
+        name = name.trim();
+        type = type.trim();
+        type = type.toLowerCase();
+        type = type.replace("roses", "rose");
+        type = type.replace("sunflowers", "sunflower");
+        type = type.replace("tulips", "tulip");
+
+        if (type === "rose") {
+          h1.innerHTML = "🌹 Thank you " + name + ", we will be in touch!";
+          h3R.innerHTML = "✔";
+        } else {
+          if (type === "sunflower") {
+            h1.innerHTML = "🌻 Thank you " + name + ", we will be in touch!";
+            h3S.innerHTML = "✔";
+          } else {
+            if (type === "tulip") {
+              h1.innerHTML = "🌷 Thank you " + name + ", we will be in touch!";
+              h3T.innerHTML = "✔";
+            } else {
+              alert("😢 Sorry, that is not available.");
+            }
+          }
+        }
+      }
+
+      let button = document.querySelector("button");
+      button.addEventListener("click", buyFlowers);
+    </script>
+  </body>
+</html>
